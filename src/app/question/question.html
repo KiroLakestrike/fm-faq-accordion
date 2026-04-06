@@ -1,0 +1,19 @@
+@if (loading) {
+<p>Loading...</p>
+} @else if (error) {
+<p>{{ error }}</p>
+} @else if (data.questions.length === 0) {
+<p>No Questions found</p>
+} @else {
+@for (item of data.questions; track item.question) {
+<ul class="question-container">
+    <li class="question">
+        <span class="ask">{{ item.question }}</span>
+        <button type="button">
+            <img src="./icon-plus.svg" alt="Expand" (click)="onExpandClick($index)">
+        </button>
+    </li>
+    <div class="answer">{{ item.answer }}</div>
+</ul>
+}
+}
