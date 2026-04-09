@@ -1,0 +1,49 @@
+@use '../../scss/breakpoints' as *;
+@use '../../scss/typography' as *;
+@use '../../scss/colors' as *;
+@use '../../scss/margins' as *;
+
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+
+    background-color: $white;
+    border-radius: $spacer-8;
+    padding: $spacer-24;
+    gap: $spacer-24;
+
+    @include respond(tablet) {
+        max-width: 37.5rem;
+        padding: $spacer-40;
+    }
+}
+
+.page-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: $spacer-24;
+
+}
+
+img {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    @include respond(tablet) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+h1 {
+    color: $purple-950;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-32;
+
+    @include respond(tablet) {
+        font-size: $font-size-56;
+    }
+}

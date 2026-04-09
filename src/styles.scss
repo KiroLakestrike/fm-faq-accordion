@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@use './scss/breakpoints' as *;
+@use './scss/typography' as *;
+@use './scss/colors' as *;
+@use './scss/margins' as *;
+
+
+@font-face {
+    font-family: WorkSans;
+    src: url('../public/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: WorkSans;
+    src: url('../public/assets/fonts/WorkSans-VariableFont_wght.ttf');
+    font-style: normal;
+}
+
+*,
+*::after,
+*::before {
+    font-family: 'WorkSans';
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        $purple-100 ;
+    background-size: 100% 20vh;
+    min-height: 100vh;
+    padding: 8.438rem $spacer-24;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: -10;
+    height: 300px;
+    min-height: 50%;
+    background: url('/background-pattern-mobile.svg') no-repeat;
+    background-size: 100vw;
+
+    @include respond(tablet) {
+        background:
+            url('/background-pattern-desktop.svg') no-repeat;
+            background-size: 100vw;
+    }
+
+
+}

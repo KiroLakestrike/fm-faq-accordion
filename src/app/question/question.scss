@@ -1,0 +1,60 @@
+@use '../../scss/breakpoints' as *;
+@use '../../scss/typography' as *;
+@use '../../scss/colors' as *;
+@use '../../scss/margins' as *;
+
+.question-container {
+    margin-bottom: $spacer-24;
+}
+
+.question {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    font-weight: $font-weight-semi-bold;
+    font-size: $font-size-16;
+    color: $purple-950;
+
+    @include respond(tablet) {
+        font-size: $font-size-18;
+    }
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    opacity: 0;
+    transition:
+        max-height 0.6s ease-in-out,
+        margin-top 0.6s ease-in-out,
+        opacity 0.6s ease-in-out;
+
+    color: $purple-600;
+    font-size: $font-size-14;
+
+
+    @include respond(tablet) {
+        font-size: $font-size-16;
+    }
+}
+
+.answer.expanded {
+    margin-top: $spacer-24;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.question {
+    margin-top: $spacer-24;
+
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}

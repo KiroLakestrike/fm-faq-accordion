@@ -18,10 +18,12 @@ export class QuestionComponent implements OnInit {
   loading = true;
   error = '';
 
-  onExpandClick(index: number) {
-    console.log('Button clicked Index: ', index);
-  }
+  expandedIndex: number | null = null;
 
+
+  onExpandClick(index: number) {
+    this.expandedIndex = this.expandedIndex === index ? null : index;
+  }
 
   ngOnInit(): void {
     this.handleJSON
@@ -35,13 +37,12 @@ export class QuestionComponent implements OnInit {
       .subscribe({
         next: (result) => {
           this.data = result;
-          console.log('JSON geladen:', result);
+          console.log('JSON full loaded:', result);
 
         },
         error: (err) => {
           console.error(err);
-          this.error = 'Fehler beim Laden der JSON';
-
+          this.error = 'Erorr while loading JSON Data';
         }
       });
   }
