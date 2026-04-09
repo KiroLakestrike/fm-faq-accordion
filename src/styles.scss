@@ -47,12 +47,12 @@ body {
     z-index: -10;
     height: 300px;
     min-height: 50%;
-    background: url('../public/background-pattern-mobile.svg') no-repeat;
+    background: url('./assets/background-pattern-mobile.svg') no-repeat;
     background-size: 100vw;
 
     @include respond(tablet) {
         background:
-            url('../public/background-pattern-desktop.svg') no-repeat;
+            url('./assets/background-pattern-desktop.svg') no-repeat;
         background-size: 100vw;
     }
 
