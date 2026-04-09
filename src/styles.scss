@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: WorkSans;
-    src: url('../public/assets/fonts/WorkSans-Italic-VariableFont_wght.ttf');
+    src: url('../assets/fonts/WorkSans-Italic-VariableFont_wght.ttf');
     font-style: italic;
 }
 
@@ -47,13 +47,13 @@ body {
     z-index: -10;
     height: 300px;
     min-height: 50%;
-    background: url('/background-pattern-mobile.svg') no-repeat;
+    background: url('../public/background-pattern-mobile.svg') no-repeat;
     background-size: 100vw;
 
     @include respond(tablet) {
         background:
-            url('/background-pattern-desktop.svg') no-repeat;
-            background-size: 100vw;
+            url('../public/background-pattern-desktop.svg') no-repeat;
+        background-size: 100vw;
     }
 
 
